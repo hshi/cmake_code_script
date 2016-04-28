@@ -18,11 +18,11 @@ if(typ=="mpi"):
              -DMODULE_EXTRA_PATH:STRING='~/lib/Modules' \
              -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
 elif(typ=="serial"):
-  os.environ['LIBHAO'] = "~/lib_hao/serial"
+  os.environ['LIBHAO'] = "~/lib/lib_hao/serial"
   com="cmake -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -std=c++11' \
              -DCOMPILER_EXTRA_DEF:STRING=' '\
-             -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
-             -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/serial "+src_path
+             -DMODULE_EXTRA_PATH:STRING='~/lib/Modules' \
+             -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
 elif(typ=="storm"):
   os.environ['LIBHAO'] = "~/lib_hao/mpi"
   os.environ['SPRNG'] = "~/sprng2.0"
