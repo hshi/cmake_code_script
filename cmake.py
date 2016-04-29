@@ -11,7 +11,8 @@ else:
   install_dirc_name=sys.argv[3]
 
 if(typ=="mpi"):
-  os.environ['LIBHAO'] = "~/lib/lib_hao/mpi"
+  os.environ['LIBHAO']           = "~/lib/lib_hao/mpi"
+  os.environ['GHF_HUBBARD_FFTW'] = "~/lib/ghf_hubbard_fftw/mpi"
   com="cmake -DCMAKE_CXX_COMPILER=mpic++ \
              -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -std=c++11' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
@@ -19,6 +20,7 @@ if(typ=="mpi"):
              -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
 elif(typ=="serial"):
   os.environ['LIBHAO'] = "~/lib/lib_hao/serial"
+  os.environ['GHF_HUBBARD_FFTW'] = "~/lib/ghf_hubbard_fftw/serial"
   com="cmake -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -std=c++11' \
              -DCOMPILER_EXTRA_DEF:STRING=' '\
              -DMODULE_EXTRA_PATH:STRING='~/lib/Modules' \
