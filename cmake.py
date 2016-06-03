@@ -41,15 +41,15 @@ elif(typ=="hu"):
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
              -DMODULE_EXTRA_PATH:STRING='~/lib/Modules' \
              -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
-elif(typ=="hu+magma"):
-  os.environ['LIBHAO'] = "~/lib_hao/mpimagma"
+elif(typ=="humagma"):
+  os.environ['LIBHAO'] = "~/lib/lib_hao/humagma"
   os.environ['SPRNG'] = "~/sprng2.0"
   com="cmake -DCMAKE_CXX_COMPILER=mpicxx \
              -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -march=corei7 -m64 -std=c++11' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
              -DUSE_MAGMA=on \
-             -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
-             -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpimagma "+src_path
+             -DMODULE_EXTRA_PATH:STRING='~/lib/Modules' \
+             -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
 elif(typ=="titan"):
   os.environ['LIBHAO'] = "~/lib_hao/mpi"
   os.environ['SPRNG'] = os.environ['SPRNG_DIR']
@@ -60,7 +60,7 @@ elif(typ=="titan"):
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
              -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
              -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpi "+src_path
-elif(typ=="titan+magma"):
+elif(typ=="titanmagma"):
   os.environ['LIBHAO'] = "~/lib_hao/mpimagma"
   os.environ['SPRNG'] = os.environ['SPRNG_DIR']
   os.environ['FFTW']  = "/opt/fftw/3.3.4.0/interlagos"
