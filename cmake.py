@@ -26,13 +26,13 @@ elif(typ=="serial"):
              -DMODULE_EXTRA_PATH:STRING='~/lib/Modules' \
              -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
 elif(typ=="storm"):
-  os.environ['LIBHAO'] = "~/lib_hao/mpi"
+  os.environ['LIBHAO'] = "~/lib/lib_hao/mpi"
   os.environ['SPRNG'] = "~/sprng2.0"
   com="cmake -DCMAKE_CXX_COMPILER=mpicxx \
              -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -std=c++11' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
-             -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
-             -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpi "+src_path
+             -DMODULE_EXTRA_PATH:STRING='~/lib/Modules' \
+             -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
 elif(typ=="hu"):
   os.environ['LIBHAO'] = "~/lib_hao/mpi"
   os.environ['SPRNG'] = "~/sprng2.0"
