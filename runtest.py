@@ -13,7 +13,7 @@ elif(typ=="serial"):
   for testname in glob.glob('*test'):
       subprocess.call('./'+testname, shell=True )
       sys.stdout.flush()
-elif(typ=="mvp"):
+elif(typ=="mvp2"):
   for testname in glob.glob('*test'):
       subprocess.call('mvp2run ./'+testname, shell=True )
       sys.stdout.flush()
@@ -21,3 +21,8 @@ elif(typ=="ap"):
   for testname in glob.glob('*test'):
       subprocess.call('aprun ./'+testname, shell=True )
       sys.stdout.flush()
+elif(typ=="ib"):
+  for testname in glob.glob('*test'):
+      subprocess.call('ibrun ./'+testname, shell=True )
+      sys.stdout.flush()
+
