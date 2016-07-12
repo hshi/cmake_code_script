@@ -56,6 +56,13 @@ elif(typ=="hu"):
              -DCMAKE_CXX_FLAGS='-Wall -O3 -march=corei7 -m64' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
              -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
+elif(typ=="comet"):
+  os.environ['LIBHAO'] = "~/lib/lib_hao/comet"
+  os.environ['SPRNG'] = "~/sprng/sprng2.0"
+  com="cmake -DCMAKE_CXX_COMPILER=mpicxx \
+             -DCMAKE_CXX_FLAGS='-Wall -O3 -xHOST' \
+             -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
+             -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
 elif(typ=="humagma"):
   os.environ['LIBHAO'] = "~/lib/lib_hao/humagma"
   os.environ['SPRNG'] = "~/sprng2.0"
