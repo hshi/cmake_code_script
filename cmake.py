@@ -45,6 +45,7 @@ elif(typ=="serial"):
 elif(typ=="storm"):
   os.environ['LIBHAO'] = "~/lib/lib_hao/storm"
   os.environ['SPRNG'] = "~/sprng2.0"
+  os.environ['GHF_HUBBARD_FFTW'] = "~/lib/ghf_hubbard_fftw/storm"
   com="cmake -DCMAKE_CXX_COMPILER=mpicxx \
              -DCMAKE_CXX_FLAGS='-Wall -O3' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
