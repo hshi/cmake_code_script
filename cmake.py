@@ -59,6 +59,7 @@ elif(typ=="hu"):
 elif(typ=="comet"):
   os.environ['LIBHAO'] = "~/lib/lib_hao/comet"
   os.environ['SPRNG'] = "~/sprng/sprng2.0"
+  os.environ['GHF_HUBBARD_FFTW'] = "~/lib/ghf_hubbard_fftw/comet"
   com="cmake -DCMAKE_CXX_COMPILER=mpicxx \
              -DCMAKE_CXX_FLAGS='-Wall -O3 -xHOST' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
