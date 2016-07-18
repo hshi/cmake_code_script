@@ -11,7 +11,7 @@ install_dirc_name = sys.argv[3]+'/'+typ
 cwd_path    = os.getcwd()
 script_path = os.path.abspath(os.path.dirname(__file__))
 
-com='python '+ script_path+'/cmake.py ' + typ
+com='python '+ script_path+'/cmake.py ' + typ + "1.0"
 
 subprocess.call('rm -rf build', shell=True)
 subprocess.call('mkdir build', shell=True)
