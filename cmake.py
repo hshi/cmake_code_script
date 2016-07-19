@@ -15,6 +15,7 @@ import subprocess
 #  com="cmake -DCMAKE_CXX_COMPILER=CC \
 #             -DCMAKE_CXX_FLAGS='-Wall -O3 -fopenmp' \
 #             -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
+#             -DUSE_MAGMA=on \
 #             -DCMAKE_MODULE_PATH='~/cmake/Modules' \
 #             -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
 #===============================================================================================================
@@ -55,6 +56,15 @@ elif(typ=="hu"):
   com="cmake -DCMAKE_CXX_COMPILER=mpicxx \
              -DCMAKE_CXX_FLAGS='-Wall -O3 -march=corei7 -m64' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
+             -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
+elif(typ=="humagma"):
+  os.environ['LIBHAO'] = "~/lib/lib_hao/hu1.0"
+  os.environ['SPRNG'] = "~/sprng2.0"
+  os.environ['GHF_HUBBARD_FFTW'] = "~/lib/ghf_hubbard_fftw/hu1.0"
+  com="cmake -DCMAKE_CXX_COMPILER=mpicxx \
+             -DCMAKE_CXX_FLAGS='-Wall -O3 -march=corei7 -m64' \
+             -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
+             -DUSE_MAGMA=on \
              -DCMAKE_INSTALL_PREFIX:PATH="+install_dirc_name+" "+src_path
 elif(typ=="comet"):
   os.environ['LIBHAO'] = "~/lib/lib_hao/comet1.0"
