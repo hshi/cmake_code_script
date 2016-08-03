@@ -23,6 +23,6 @@ elif(typ=="ap"):
       sys.stdout.flush()
 elif(typ=="ib"):
   for testname in glob.glob('*test'):
-      subprocess.call('ibrun ./'+testname, shell=True )
+      subprocess.call('ibrun -v ./'+testname, shell=True )
       sys.stdout.flush()
 
